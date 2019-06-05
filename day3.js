@@ -77,3 +77,34 @@ for (let i = 1; i <= 100; i++) {
         console.log(i);
     }
 }
+
+console.log("Pluralizer");
+
+var arrPlur = ["goose","sheep" , "child" , "person"]
+
+function pluralizer (noun, num){
+  if (num > 1) {
+    if (arrPlur.includes(noun)) {
+        switch (noun) {
+          case arrPlur[0]:
+            console.log(`${num} geese`);
+            break;
+          case arrPlur[1]:
+            console.log(`${num} sheep`);
+            break;
+          case arrPlur[2]:
+            console.log(`${num} children`);
+            break;
+          case arrPlur[3]:
+            console.log(`${num} people`);
+            break;
+        }
+    } else {
+      console.log(`${num} ${noun}s`);
+    }
+  } else {
+    console.log(`${num} ${noun}`);
+  }
+}
+
+pluralizer("goose", 1);
