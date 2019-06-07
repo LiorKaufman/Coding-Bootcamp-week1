@@ -328,3 +328,25 @@ console.log(bubleSorting(library));
 //     }
 //     return 0
 // }));
+
+var arrContObj = [{
+  title: "A"
+},{
+  title: "R"
+},{
+  title: "D"
+},{
+  title: "B"
+},{
+  title: "F"
+},{
+  title: "C"
+}]
+
+function sortArr2 (arr1){
+  return arr1.sort((a,b) => {
+    return a.title>b.title ? 1:-1
+  })
+}
+
+console.log(sortArr2(arrContObj));
