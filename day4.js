@@ -329,6 +329,8 @@ console.log(bubleSorting(library));
 //     return 0
 // }));
 
+// better way to do sorting by title.
+
 var arrContObj = [{
   title: "A"
 },{
@@ -344,9 +346,44 @@ var arrContObj = [{
 }]
 
 function sortArr2 (arr1){
-  return arr1.sort((a,b) => {
-    return a.title>b.title ? 1:-1
+  return arr1.sort((a,b) => { a.title>b.title ? 1:-1
   })
 }
 
 console.log(sortArr2(arrContObj));
+
+// // edabit Hitting the Jackpot Challenge
+// Hitting the Jackpot
+// Create a function that takes in an array (slot machine outcome) and returns true if all elements in the array are identical, and false otherwise. The array will contain 4 elements.
+//
+// Examples
+ var  test = ["@", "@", "@", "@"]
+//
+// testJackpot(["abc", "abc", "abc", "abc"]) ➞ true
+//
+// testJackpot(["SS", "SS", "SS", "SS"]) ➞ true
+//
+// testJackpot(["&&", "&", "&&&", "&&&&"]) ➞ false
+//
+// testJackpot(["SS", "SS", "SS", "Ss"]) ➞ false
+// Notes
+// The elements must be exactly identical for there to be a jackpot.
+
+
+// Function decleration
+function testJackPot(array1) {
+	for(var i = 1; i < array1.length; i++)
+    {
+        if(array1[i] !== array1[0])
+            return false;
+    }
+
+    return true;
+}
+console.log(testJackPot(test));
+
+// better solution using Set
+
+// function testJackpot(array1) {
+// 	return new Set(result).size === 1
+// }
