@@ -6,6 +6,7 @@
     <title>High and Low</title>
   </head>
   <body>
+
     <div class="heading">
 
     </div>
@@ -13,10 +14,15 @@
     <h3>The Rules</h3>
     <p>Seven attemts to guess right</p>
 
-    <!-- add an input and prompt user  -->
-    <!-- add a paragraph  to show if too low or too high -->
-    <!-- add a counter for the attemts -->
-    <!-- show wining screen -->
-    <!-- show losing screen -->
+<div class="form">
+  <label for="guessField"> Enter a guess</label>
+  <input type="text" class="guessField" id="guessField">
+  <input type="submit"  value="Submit" class="guessSubmit" id="submitGuess">
+</div>
+
+<p id="displayAttempts"></p>
+<p id="dispNums"></p>
+
+<script src="highLow.js"> </script>
   </body>
 </html>

@@ -1,36 +1,32 @@
-function play (){
+var randNum = Math.floor(Math.random() *100+1)
+let attempts = 0
+document.getElementById("submitGuess").onclick = function(){
 
-  var randNum = Math.floor(Math.random() * 100) +1
-  var userGuess = document.getElementById('guessNum')
-  let attemts = 0
-  do {
-    // changes screen to show win
-    let gameOn = true;
-    // stops the loop
-    if (checkGuess(userGuess , randNum)) {
-      gameOn=false
-      // change message to show you have won
-    }
-    else if(!checkGuess(userGuess , randNum)) {
-      attemts++
-    }
-    if (attemts === 7) {
-      gameOn = false
-      // add to screen losing message
-    }
-
-  } while (gameOn);
-
+  var userGuess = document.getElementById("guessField").value
+  if (userGuess == randNum) {
+    alert("You won!")
+  }
+  else if (userGuess > randNum && attempts < 7) {
+    alert("Too high")
+    attempts++
+    changeNumOfAttempts(attempts)
+    showLastAttempts(userGuess)
+  }
+  else if (userGuess < randNum && attempts < 7) {
+    alert("Too low")
+    attempts++
+    changeNumOfAttempts(attempts)
+    showLastAttempts(userGuess)
+  }
+  else if (attempts >= 7) {
+    alert("You lost")
+  }
 }
 
-function checkGuess(userGuess, randNum) {
-  if (userGuess > randNum) {
-    // change the screen to say to high
-    return false
-  } else if (userGuess < randNum ) {
-    // change screen to say too low
-    return false
-  } else if (userGuess === randNum) {
-    return true
-  }
+function changeNumOfAttempts (value) {
+  document.getElementById("displayAttempts").innerHTML = `${attempts}`
+}
+
+function showLastAttempts(userPrivGuess) {
+ document.getElementById("dispNums").innerHTML +=`${userPrivGuess},`
 }

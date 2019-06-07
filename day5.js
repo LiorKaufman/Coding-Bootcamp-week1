@@ -68,7 +68,16 @@ console.log("Log every letter of a string ");
 
 
 // Stretch: Using a while loop.
+function logLetterWhileLoop (string){
+  let test =string.split("")
+  let i = 0;
+  while (i < string.length) {
+    console.log(test[i]);
+    i++
+  }
+}
 
+console.log(logLetterWhileLoop("testing"));
 // Super Stretch: Using forEach().
 const logEveryLetter = (a) => {
   let tempArr = a.split("")
@@ -87,17 +96,21 @@ var message = "thisisateststring"
 // 7. Write a function that takes a string like message as an argument and returns the string without vowels.
 console.log("remove vowels ");
 function vowelRemover (string) {
-  let vowels = ["a","e","i","o","u","A","E","I","O","U"]
-  let tempArr = string.split("")
-  for (let i = 0; i < vowels.length; i++) {
-    for (let j = 0; j < tempArr.length; j++) {
-      if (tempArr[j] === vowels[i]) {
-        tempArr.splice(j,1)
-        j--
+  if (typeof string !== "string") {
+    return "Please enter a string "
+  } else {
+      let vowels = ["a","e","i","o","u","A","E","I","O","U"]
+      let tempArr = string.split("")
+      for (let i = 0; i < vowels.length; i++) {
+        for (let j = 0; j < tempArr.length; j++) {
+          if (tempArr[j] === vowels[i]) {
+            tempArr.splice(j,1)
+            j--
+          }
+        }
       }
-    }
+      return tempArr.join("")
   }
-  return tempArr.join("")
 }
 
 console.log(vowelRemover(message));
